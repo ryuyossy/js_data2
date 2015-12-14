@@ -1,0 +1,91 @@
+@charset "utf-8";
+@import "import";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	line-height: 1.6;
+}
+
+p {
+	color: $textColor;
+	font: {
+		size: $fontSize_base;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $textColor;
+}
+
+em {
+	font-style: normal;
+}
+
+button {
+	font: {
+		size: $fontSize_base;
+	}
+}
+
+/*----------------------------------------
+	List
+----------------------------------------*/
+
+ul,
+ol,
+dl {
+	color: $textColor;
+	list-style-type: none;
+}
+
+/*----------------------------------------
+	Anchor
+----------------------------------------*/
+
+a {
+	color: $linkColor;
+	
+	&:hover {
+		color: $linkColor_hover;
+	}
+	&:visited {
+		color: $linkColor_visited;
+	}
+	&:active {
+		color: $linkColor_active;
+	}
+}
+
+/*----------------------------------------
+	Table
+----------------------------------------*/
+
+table {
+}
+
+th,
+td {
+	color: $textColor;
+}
+
+/*----------------------------------------
+	Others
+----------------------------------------*/
+
+img {
+	border: none;
+	vertical-align: bottom;
+}
+
+hr {
+	border: none;
+}

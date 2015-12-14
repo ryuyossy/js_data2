@@ -1,0 +1,94 @@
+@charset "utf-8";
+body {
+  background: url('/resources/imgs/common/bg.png?1374113240');
+}
+
+#header,
+main,
+#footer {
+  margin: 0 auto;
+  width: 320px;
+  position: relative;
+}
+
+/*----------------------------------------
+	header
+----------------------------------------*/
+#header {
+  background: url('/resources/imgs/common/header_back.png?1374113242') 0 0 no-repeat;
+  -webkit-background-size: 320px 50px;
+  background-size: 320px 50px;
+  height: 50px;
+}
+#header h1 {
+  padding: 10px 0 0 160px;
+  font-size: 16px;
+  color: #fffee3;
+  text-shadow: 0 -1px #000;
+}
+#header .btnBack {
+  background: url('/resources/imgs/common/btn_back.png?1374113242') 0 0 no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 58px;
+  height: 32px;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+/*----------------------------------------
+	content
+----------------------------------------*/
+main img {
+  width: 100%;
+  height: auto;
+}
+
+/*----------------------------------------
+	Class
+----------------------------------------*/
+.bigBold {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*----------------------------------------
+	footer
+----------------------------------------*/
+#footer .link li {
+  padding-left: 75px;
+  font-size: 14px;
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #373737;
+}
+#footer .link li a {
+  height: 67px;
+  padding-top: 13px;
+  display: block;
+  color: #999;
+  text-decoration: none;
+}
+#footer .link li.home {
+  background: url('/resources/imgs/common/icon_candles.png?1374113242') 0 center no-repeat, url('/resources/imgs/common/link_top.png?1374113240') 75px 35px no-repeat;
+  -webkit-background-size: 64px 74px, 82px 23px;
+  background-size: 64px 74px, 82px 23px;
+}
+#footer .link li.mypage {
+  background: url('/resources/imgs/common/icon_mypage.png?1373526339') 0 center no-repeat, url('/resources/imgs/common/link_mypage.png?1374113240') 75px 35px no-repeat;
+  -webkit-background-size: 56px 59px, 118px 19px;
+  background-size: 56px 59px, 118px 19px;
+}
+
+/*----------------------------------------
+	clearfix
+----------------------------------------*/
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}

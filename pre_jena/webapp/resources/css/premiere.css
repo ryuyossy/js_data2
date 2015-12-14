@@ -1,0 +1,192 @@
+@charset "utf-8";
+main {
+  padding-bottom: 10px;
+}
+main section h2 {
+  background: url('/resources/imgs/premiere/menu_separator.png?1374113315') 0 0 no-repeat, url('/resources/imgs/common/bg.png?1374113240') repeat;
+  -webkit-background-size: 320px 99px, 40px 40px;
+  background-size: 320px 99px, 40px 40px;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 320px;
+  height: 99px;
+}
+main section h3 {
+  background: url('/resources/imgs/premiere/preTitle_bg01.png?1373526325') 0 0 no-repeat;
+  -webkit-background-size: 320px 56px;
+  background-size: 320px 56px;
+  font-size: 16px;
+  padding: 15px 0;
+  height: 56px-30;
+  text-align: center;
+  margin: 1em 0;
+}
+main section figure {
+  margin: 1em 0;
+}
+main section p {
+  margin: 1em 0;
+  text-align: center;
+}
+main section.heart h3 {
+  background-image: url('/resources/imgs/premiere/preTitle_bg02.png?1374113304');
+  margin: 1em 0;
+}
+
+.profile {
+  height: 33px;
+  padding: 10px 10px 0 0;
+  text-align: right;
+}
+.profile:before {
+  padding-right: 0.5em;
+  content: '>';
+}
+
+.resultList {
+  border: 2px solid #ba9220;
+  width: 80%;
+  margin: 10px auto;
+  background-color: #fff;
+  text-align: left;
+  padding: 10px 24px 16px;
+  background: url('/resources/imgs/premiere/golden_wings_left.png?1374113307') left top no-repeat, url('/resources/imgs/premiere/golden_wings_right.png?1374113306') right top no-repeat;
+  -webkit-background-size: 39px 21px, 39px 21px;
+  background-size: 39px 21px, 39px 21px;
+  background-color: #fff;
+}
+.resultList h4 {
+  text-align: center;
+  color: #ba9220;
+}
+.resultList ul {
+  color: #333;
+}
+.resultList .resultTitle {
+  font-weight: bold;
+  color: #ba9220;
+  text-align: center;
+  line-height: 1.6em;
+}
+.resultList ul {
+  list-style-type: disc;
+  margin: 0 8px;
+}
+.resultList li {
+  margin: 4px 0;
+}
+.resultList li span {
+  font-weight: bold;
+  color: #e4007f;
+}
+
+.btnArea {
+  position: relative;
+  padding: 30px 0;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #5b0f27;
+  width: 94%;
+  margin: 40px auto;
+}
+.btnArea dl {
+  margin: 8px auto;
+  width: 260px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+}
+.btnArea dl dt {
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+}
+.btnArea dl dl dt {
+  padding: 0;
+  color: #fff !important;
+  text-align: left;
+  float: left;
+  width: 6em;
+  padding: 0;
+  font-size: 14px;
+}
+.btnArea dl dl dd {
+  color: #fff;
+  text-align: left;
+}
+.btnArea dl.user {
+  border: 1px solid #ddbd63;
+}
+.btnArea dl.user dt {
+  color: #ddbd63;
+}
+.btnArea dl.user .edit {
+  background: rgba(221, 189, 99, 0.4);
+}
+.btnArea dl.target {
+  border: 1px solid #dd63a2;
+}
+.btnArea dl.target dt {
+  color: #ddbd63;
+}
+.btnArea dl.target .edit {
+  background: rgba(221, 99, 162, 0.4);
+}
+.btnArea dl .edit {
+  padding: 4px;
+  border-top: 1px solid #ddbd63;
+  text-align: center;
+  text-shadow: 0 1px 0 #000;
+}
+.btnArea:before, .btnArea:after {
+  position: absolute;
+  content: " ";
+  display: block;
+}
+.btnArea:before {
+  background: url('/resources/imgs/premiere/btn_top.png?1374113314') 0 0 no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 212px;
+  height: 46px;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  top: -20px;
+  left: 46px;
+}
+.btnArea:after {
+  background: url('/resources/imgs/premiere/btn_bottom.png?1374113309') 0 0 no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+  width: 212px;
+  height: 46px;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  bottom: -20px;
+  left: 46px;
+}
+.btnArea button {
+  display: block;
+  border: none;
+  background: -webkit-linear-gradient(-80deg, #cdc9af 0%, #e7e3c8 12%, #fefbdd 21%, #f1eecf 26%, #d3cfb1 38%, #d3cfb1 50%, #faf6d9 80%, #c1bea3 100%);
+  background: linear-gradient(-80deg, #cdc9af 0%, #e7e3c8 12%, #fefbdd 21%, #f1eecf 26%, #d3cfb1 38%, #d3cfb1 50%, #faf6d9 80%, #c1bea3 100%);
+  -webkit-border-radius: 0.625rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 6px 0px #86805f, inset 0 0 13px #fdfcdf;
+  margin: 0.625rem auto;
+  width: 240px;
+  height: 3.75rem;
+  text-shadow: 0 1px 0 #fff;
+  font-weight: bold;
+  color: #000;
+}
+.btnArea button:active {
+  top: 6px;
+  box-shadow: none;
+}
+.btnArea .ticket {
+  width: 70%;
+  margin: 2em auto 0;
+  font-size: 14px;
+}

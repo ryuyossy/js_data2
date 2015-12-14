@@ -1,0 +1,21 @@
+@charset "utf-8";
+main {
+  background: url('/resources/imgs/common/footer_line.png?1373526343') left bottom repeat-x, url('/resources/imgs/preJenapualani/bg.png?1373526330') repeat;
+  -webkit-background-size: 45px 10px, 45px 45px;
+  background-size: 45px 10px, 45px 45px;
+}
+
+.profile {
+  background-color: #5b0f27;
+  border-top: solid 1px #692339;
+}
+
+.bright {
+  text-shadow: 0 0 4px #9fd67f,0 0 4px #9fd67f,0 0 4px #9fd67f;
+}
+
+.btnArea {
+  border: 4px solid #5a0f26;
+  background-color: #320404;
+  box-shadow: inset 0 0 1px transparent,inset 0 0 1px transparent,inset 0 0 1px transparent;
+}

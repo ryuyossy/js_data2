@@ -1,0 +1,38 @@
+@charset "utf-8";
+@import "import";
+
+//背景画像指定
+$bgImage: "preJenapualani/bg.png";
+
+//テキストシャドウ色
+$textShadowColor: #9fd67f;
+
+//ボタンエリアの設定
+$boxArea-borderColor: #5a0f26;
+$boxArea-backgroundColor: #320404;
+$boxArea-boxShadowColor: transparent;
+
+
+
+main {
+	@include backgroundRetina(
+	("common/footer_line.png",$bgImage),
+	false,
+	(left bottom repeat-x,repeat));
+}
+
+.profile {
+	background-color: #5b0f27;
+	border-top: solid 1px #692339;
+}
+
+.bright {
+	@include text-shadow-repeat(0 0 4px $textShadowColor,3);
+}
+
+.btnArea {
+	border: 4px solid $boxArea-borderColor;
+	background-color: $boxArea-backgroundColor;
+	
+	@include box-shadow-repeat(inset 0 0 1px $boxArea-boxShadowColor,3);
+}

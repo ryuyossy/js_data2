@@ -1,0 +1,77 @@
+@charset "utf-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.6;
+}
+
+p {
+  color: white;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: white;
+}
+
+em {
+  font-style: normal;
+}
+
+button {
+  font-size: 16px;
+}
+
+/*----------------------------------------
+	List
+----------------------------------------*/
+ul,
+ol,
+dl {
+  color: white;
+  list-style-type: none;
+}
+
+/*----------------------------------------
+	Anchor
+----------------------------------------*/
+a {
+  color: white;
+}
+a:hover {
+  color: white;
+}
+a:visited {
+  color: white;
+}
+a:active {
+  color: white;
+}
+
+/*----------------------------------------
+	Table
+----------------------------------------*/
+th,
+td {
+  color: white;
+}
+
+/*----------------------------------------
+	Others
+----------------------------------------*/
+img {
+  border: none;
+  vertical-align: bottom;
+}
+
+hr {
+  border: none;
+}

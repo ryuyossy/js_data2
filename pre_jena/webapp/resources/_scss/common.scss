@@ -1,0 +1,95 @@
+@charset "utf-8";
+@import "import";
+
+
+body {
+	background: image-url('common/bg.png');;
+}
+
+#header,
+main,
+#footer {
+	margin: 0 auto;
+	width: $baseWidth;
+	position: relative;
+}
+/*----------------------------------------
+	header
+----------------------------------------*/
+#header {
+	@include backgroundRetina('common/header_back.png',false);
+	height: $imgHeight;
+	
+	h1 {
+		padding: 10px 0 0 160px;
+		font-size: 16px;
+		color: #fffee3;
+		text-shadow: 0 -1px #000;
+	}
+	
+	.btnBack {
+		@include backgroundRetina('common/btn_back.png');
+		position: absolute;
+		left: 10px;
+		top: 10px;
+	}
+} 
+
+/*----------------------------------------
+	content
+----------------------------------------*/
+main {
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+
+/*----------------------------------------
+	Class
+----------------------------------------*/
+.bigBold {
+	font: {
+		size: $fontSize_big;
+		weight: bold;
+	};
+}
+
+
+/*----------------------------------------
+	footer
+----------------------------------------*/
+#footer {
+	.link {
+		li {
+			padding-left: 75px;
+			font-size: $fontSize_small;
+			border-bottom: 1px solid #000;
+			border-top: 1px solid #373737;
+			
+			a {
+				height: 67px;
+				padding-top: 13px;
+				display: block;
+				color: #999;
+				text-decoration: none;
+			}
+			
+			&.home {
+				@include backgroundRetina(
+				("common/icon_candles.png","common/link_top.png"),
+				false,
+				(0 center no-repeat,75px 35px no-repeat));
+			}
+			&.mypage {
+				@include backgroundRetina(
+				("common/icon_mypage.png","common/link_mypage.png"),
+				false,
+				(0 center no-repeat,75px 35px no-repeat));
+			}
+		}
+	}
+}
+
+@include clearfix();

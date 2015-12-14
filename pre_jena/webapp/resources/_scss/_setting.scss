@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+$legacy-support-for-ie:false;
+$experimental-support-for-mozilla:false;
+$experimental-support-for-webkit:true;
+$support-for-original-webkit-gradients:true;
+$experimental-support-for-opera:false;
+$experimental-support-for-microsoft:false;
+$experimental-support-for-khtml:false;
+$experimental-support-for-svg:false;
+
+// ページの横幅
+$baseWidth : 320px;
+
+// 標準テキストカラー
+$textColor : #fff;
+
+
+// 標準テキストカラー
+$fontSize_small : 14px;
+$fontSize_base : 16px;
+$fontSize_big : 20px;
+
+// 標準リンクカラー
+$linkColor : #fff;
+$linkColor_visited : #fff;
+$linkColor_hover : #fff;
+$linkColor_active : #fff;

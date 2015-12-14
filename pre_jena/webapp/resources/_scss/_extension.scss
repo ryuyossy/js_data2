@@ -1,0 +1,213 @@
+@charset "utf-8";
+
+
+// ----------------------------------------------------------------------
+// sprite
+// ----------------------------------------------------------------------
+$sprite_width: '';
+$sprite_height: '';
+$sprite_xpos: '';
+$sprite_ypos: '';
+$sprite_imgWidth: '';
+$sprite_imgHeight: '';
+
+@mixin sprite-background($name,$map,$cache: false, $retina: true) {
+	$retinaSuport: if($retina, 2, 1);
+
+	$spriteWidth: round(image-width(sprite-path($map)) / $retinaSuport);
+	$spriteHeight: round(image-height(sprite-path($map)) / $retinaSuport);
+
+	$xpos: round(nth(sprite-position($map, $name), 1) / $retinaSuport);
+	$ypos: round(nth(sprite-position($map, $name), 2) / $retinaSuport);
+	
+	$imgWidth: round(image-width(sprite-file($map, $name)) / $retinaSuport);
+	$imgHeight: round(image-height(sprite-file($map, $name)) / $retinaSuport);
+	
+	$sprite_width: $spriteWidth;
+	$sprite_height: $spriteHeight;
+	$sprite_xpos: $xpos;
+	$sprite_ypos: $ypos;
+	$sprite_imgWidth: $imgWidth;
+	$sprite_imgHeight: $imgHeight;
+
+	background : no-repeat	$xpos $ypos;
+	
+	@if $cache== true {
+		background-image: image-url(sprite-path($map));
+	} @else {
+		background-image: url(/html/img/sprite-path($map));
+	}
+
+	overflow: hidden;
+	width: $imgWidth;
+	height: $imgHeight;
+
+	@include background-size($spriteWidth auto);
+}
+
+
+@mixin sprite-background($name,$map,$retina: true,$doubleClass : true) {
+	$list: $name;
+
+	@include image($map, $list,$retina,$doubleClass);
+	@include position($map, $list, $retina,$doubleClass);
+}
+
+@mixin position($map, $sprite-names,$retina : true,$doubleClass : true) {
+	$retinaSuport: if($retina, 2, 1);
+	$map : nth($map,1);
+	$spriteName: sprite-map-name($map);
+	
+	@each $name in $sprite-names {
+		$class:  if($doubleClass, '.' + $spriteName, '') + '.' + $name;
+		#{$class} {
+			$posY: nth(sprite-position($map, $name), 2);
+			$imgWidth: round(image-width(sprite-file($map, $name)) / $retinaSuport);
+			$imgHeight: round(image-height(sprite-file($map, $name)) / $retinaSuport);
+			$xpos: round(nth(sprite-position($map, $name), 1) / $retinaSuport);
+			$ypos: round(nth(sprite-position($map, $name), 2) / $retinaSuport);
+			background-position: $xpos $ypos;
+			width: $imgWidth;
+			height: $imgHeight;
+		}
+	}
+}
+
+@mixin image($map, $sprite-names,$retina : true,$doubleClass : true) {
+	$names: ();
+	$retinaSuport: if($retina, 2, 1);
+	
+	@if length($map) > 1 {
+		@if nth($map,2) == true {
+			$sprite-img: sprite-url(nth($map,1));
+		}
+	}
+	@else {
+		$sprite-img: sprite-url(nth($map,1));
+	}
+	
+	$map : nth($map,1);
+	
+	
+	$spriteWidth: round(image-width(sprite-path($map)) / $retinaSuport);
+	$spriteHeight: round(image-height(sprite-path($map)) / $retinaSuport);
+	$spriteName: sprite-map-name($map);
+	
+	
+	@each $name in $sprite-names {
+		$class:  if($doubleClass, '.' + $spriteName, '') + '.' + $name + ',';
+		$names: append($names, #{$class});
+	}
+	#{$names} {
+		display: block;
+		background-image: image-url(sprite-path($map), false, false);
+		background-repeat: no-repeat;
+		@include background-size($spriteWidth $spriteWidth);
+	}
+}
+
+@mixin images($n,$retina : true,$doubleClass : true) {
+	$map: sprite-map($n, $spacing: 5px);
+	$list: sprite-names($map);
+
+	@include image($map, $list,$retina,$doubleClass);
+	@include position($map, $list, $retina,$doubleClass);
+}
+
+@mixin sprite_make($dirList,$retina: true,$doubleClass:true) {
+	@each $dir in $dirList {
+		@include images($dir + '/*.png',$retina,$doubleClass);
+	}
+}
+
+// ----------------------------------------------------------------------
+// css3
+// ----------------------------------------------------------------------
+// 最大高さ min-height
+@mixin min_height($value : 1%) {
+	min-height: $value;
+	@if $legacy-support-for-ie6 {
+	_height: $value;
+	}
+}
+
+// inline-block
+@mixin inline-block {
+	display: inline-block;
+	@if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+		*display: inline;
+		*zoom: 1;
+	}
+}
+
+// 同じテキストシャドウ 繰り返し
+$text-shadowList: ' ';
+@mixin text-shadow-repeat($value : 0 0 1px rgba(0,0,0,0.3),$num : 1) {
+	$text-shadowList : $value;
+	@for $i from 1 through $num - 1 {
+		$text-shadowList : unquote($text-shadowList + "," + $value);
+	}
+	text-shadow: $text-shadowList;
+}
+$box-shadowList: ' ';
+@mixin box-shadow-repeat($value : 0 0 1px rgba(0,0,0,0.3),$num : 1) {
+	$box-shadowList : $value;
+	@for $i from 1 through $num - 1 {
+		$box-shadowList : unquote($box-shadowList + "," + $value);
+	}
+	box-shadow: $box-shadowList;
+}
+
+$imgWidth: ();
+$imgHeight: ();
+
+@mixin backgroundRetina($img,$widthFixed : true,$value : "0 0 no-repeat") {
+	$imgList : ();
+	$widthHeightList : ();
+	$width : ();
+	$height : ();
+	$imgWidth: ();
+	$imgHeight: ();
+
+	@each $i in $img {
+		$comma : if(index($img,$i) == length($img),'',',');
+		$width: round(image-width($i)/2);
+		$height: round(image-height($i)/2);
+		
+		$imgList: append($imgList, image-url($i) + ' ' + nth($value,index($img,$i)) + $comma);
+		$widthHeightList: append($widthHeightList, unquote($width + ' ' + $height) + $comma);
+		
+		$imgWidth: append($imgWidth, $width);
+		$imgHeight:  append($imgHeight, $height);
+	}
+	background: $imgList;
+	@if $widthFixed and length($img) < 2 {
+		text-indent: -9999px;
+		overflow: hidden;
+		width: $width;
+		height: $height;
+		@include background-size(100% 100%);
+	}
+	@else {
+		@include background-size($widthHeightList);
+	}
+	
+}
+
+// ----------------------------------------------------------------------
+// clearfix
+// ----------------------------------------------------------------------
+@mixin clearfix() {
+/*----------------------------------------
+	clearfix
+----------------------------------------*/
+.clearfix {
+	&:after {
+		content: ".";
+		display: block;
+		clear: both;
+		height: 0;
+		visibility: hidden;
+	}
+}
+}
